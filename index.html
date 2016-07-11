@@ -1,0 +1,2272 @@
+<style type="text/css">
+#banner {
+	position:absolute;
+    background-image: url("media/americ11.jpg");
+    top: 0%;
+    width: 100%;
+    height: 42%;
+    left: 0%;
+}
+#player {
+	width: 100%;
+	height: 8%;
+	position:fixed;
+	bottom: 0px;
+	right: 0px;
+	border: 0px none transparent;
+    padding: 0px;
+    overflow: hidden;
+    background-color: white;
+	}
+#playe {
+	width: 100%;
+	height: 8%;
+	position:fixed;
+	bottom: 10px;
+	right: 0px;
+	border: 0px none transparent;
+    padding: 0px;
+    overflow: hidden;
+}
+#table {
+	position:absolute;
+	top: 50%;
+}
+#table2 {
+	position:relative;
+	top: 72%;
+}
+#table3 {
+	position:absolute;
+	top: 115%;
+	height: 50%;
+	width: 80%;
+}
+#button {
+	background-image: url("media/red-rounded-rectangle-button-yellow-border-hi.png");
+	background-color: transparent;
+	background-size: 100% 100%;
+	border: 0px none transparent;
+    padding: 0px;
+    height: 40px;
+    color: white;
+}
+block {
+	position:absolute;
+	top: 115%;
+	width: 20%;
+	right: 0%;
+	height: 55%;
+}
+#rec {
+	position:relative;
+	top: 44%;
+}
+#feat {
+	position:relative;
+	top: 73%;
+}
+</style>
+<html>
+<p id="rec">Top Stations ></p>
+<p id="feat">Featured Stations ></p>
+<div id="banner" it="works" backgroundImage="media/americ11.jpg"><center><img src="media/microphone-clipart-microphone-clip-art-black-and-white.png" height="80%"/><br /><a href="javascript:void(0)"><input width="10px" height="6px" id="button" type="button" onClick='Talk("scheduler.html")' value="          Listen Now          "></input></a><p> </p><p> </p></center></div>
+<table id="table2"><tr><td><a href="javascript:void(0)"><img width="150" height="150" src="media/th.jpeg" onclick="Talk('http://bbnmedia-lh.akamaihd.net/i/BibleBroadcasting_Englishios@87472/master.m3u8')"/></a></td><td><a href="javascript:void(0)"><img width="150" height="150" src="media/MZ806_RS19827_ESPN_Radio_logo.jpg" onclick="Talk('http://us-east.edge-1.cis.abacast.net/direct/espn-network-48&source=tunein')"/></a></td><td><a href="javascript:void(0)"><img width="150" height="150" src="media/rapzilla.png" onclick='Talk("http://listen.radionomy.com/rapzilla")'/></a></td><td><a href="javascript:void(0)"><img width="150" height="150" src="http://cdn.klove.com/images/socialnetworking/FacebookThumbnailKlove.jpg" onclick='Talk("http://emf.mp3.miisolutions.net:80/kl/klove_itunes")'/></a></td><td><a href="javascript:void(0)"><img width="150" height="150" src="http://img3.wikia.nocookie.net/__cb20140910201936/logopedia/images/4/47/CNN_International_logo_2014.png" onclick='Talk("http://tunein.streamguys1.com/cnn")'/></a></td><td><a href="javascript:void(0)"><img width="150" height="150" src="media/microphone-clipart-microphone-clip-art-black-and-white.png" onclick='Talk("scheduler.html")'/></a></td></tr></table>
+<table id="table"><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
+<table id="table3"><tr><td>Music</td><td>News</td><td>Sports</td><td>Teaching</td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></table>
+
+<block></block>
+<iframe id="player" height="8%" width="100%" seamless="seamless"></iframe>
+</html>
+<script src="TimeTest.js"></script>
+<script src="core.js"></script>
+<script type="text/javascript">
+/* This basically explains the purpose of this app.
+
+      _
+     |/
+  ___  ____
+ /   \/    \
+|          /
+|         /
+|         \_
+ \    _    /
+  \__/ \__/
+
+Apple Music Radio.
+          _____
+         /     \
+         |     |
+         \_____/
+____________    _____
+|           \  /     |
+|            | |     |
+ \___________| |_____/
+    ______
+    |    |
+    |    /
+    |___/
+        TuneIn Radio.
+    /\             /\
+    | \           / |
+    \__\_________/__/
+    /              \
+   |  ___      __   |
+   |  \_/      \_/  |
+   |      \  /      |
+    \      ||      /
+     \     /\     /
+      \__________/
+
+       Copycat.
+
+
+
+
+
+*/
+//document.getElementById("banner").style.backgroundImage = "url(http://img3.wikia.nocookie.net/__cb20140910201936/logopedia/images/4/47/CNN_International_logo_2014.png)";
+//function onclick(event) { Talk("scheduler.html");
+//}
+//alert(document.getElementsByTagName("input")[0].onclick);
+//http://img3.findthebest.com/sites/default/files/2307/media/images/t2/CNN_Red_1409381.png
+//document.getElementById("banner").style.backgroundImage = "url(http://img3.findthebest.com/sites/default/files/2307/media/images/t2/CNN_Red_1409381.png)";
+buttons = document.getElementsByTagName("input");
+var CNNicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="http://img3.wikia.nocookie.net/__cb20140910201936/logopedia/images/4/47/CNN_International_logo_2014.png" onclick=\'Talk("http://tunein.streamguys1.com/cnn")\'/></a></td>';
+var KLOVEicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="http://cdn.klove.com/images/socialnetworking/FacebookThumbnailKlove.jpg" onclick=\'Talk("http://emf.mp3.miisolutions.net:80/kl/klove_itunes")\'/></a></td>';
+var TRCicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="media/microphone-clipart-microphone-clip-art-black-and-white.png" onclick=\'Talk("scheduler.html")\'/></a></td>';
+var rapzillaicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="media/rapzilla.png" onclick=\'Talk("http://listen.radionomy.com/rapzilla")\'/></a></td>';
+var ESPNicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="media/MZ806_RS19827_ESPN_Radio_logo.jpg" onclick=\'Talk("http://us-east.edge-1.cis.abacast.net/direct/espn-network-48&source=tunein")\'/></a></td>';
+var BBNicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="media/th.jpeg" onclick="Talk(\'http://bbnmedia-lh.akamaihd.net/i/BibleBroadcasting_Englishios@87472/master.m3u8\')"/></a></td>';
+var FNCicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="media/Fox News Radio.png" onclick="Talk(\'http://54.80.189.172/foxnewsradio-foxnewsaac-ibc2\')"/></a></td>';
+var NPRicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="http://www.niemanlab.org/images/npr-square-logo.jpg" onclick="Talk(\'http://www.npr.org/streams/mp3/nprlive24.m3u\')"/></a></td>';
+var AIRicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="http://media-cache-ec0.pinimg.com/736x/9c/a7/75/9ca7752f6656d397ee0acfa597cd915c.jpg" onclick="Talk(\'http://emf.mp3.miisolutions.net:80/a1/air1_itunes\')"/></a></td>';
+var NBCicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="http://cdn-radiotime-logos.tunein.com/s179779q.png" onclick="Talk(\'http://icy3.abacast.com/dialglobal-nbcsportsmp3-48\')"/></a></td>';
+var MOODYicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="http://scupe.org/wp-content/uploads/2013/01/RadioMoody.jpg" onclick="Talk(\'http://primary.moodyradiostream.org/mbn1.mp3\')"/></a></td>';
+var MUSICicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="https://lh3.ggpht.com/ZhD-oq3XXAgkXT1LnO7u7BqjBahofCqCH2Yl-N5EaRxv595faRIqNBJB4g2cJ08HUQ=w300" onclick="Talk(\'http://mediaserver3.afa.net:8000/inspo.mp3\')"/></a></td>';
+var POPicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="http://media.salemwebnetwork.com/TodaysChristianMusic/ImageGallery/news/large/201204/iShine-Logo.jpg" onclick="Talk(\'http://83.149.126.10/listen/2q2gvgzkb\')"/></a></td>';
+var DUBicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="http://www.godsdjs.com/v3/wp-content/uploads/2013/08/mobileradiologo.png" onclick="Talk(\'http://godsdjsradio.com:8080/stream\')"/></a></td>';
+var BALLicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="http://cdn-radiotime-logos.tunein.com/s188593q.png" onclick="Talk(\'http://8733.live.streamtheworld.com:3690/CBSSPORTS_SC\')"/></a></td>';
+var VCYicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="http://cdn-radiotime-logos.tunein.com/s36008q.png" onclick="Talk(\'http://72.13.86.203:8000/listen.pls\')"/></a></td>';
+var AFRicon = '<td><a href="javascript:void(0)"><img width="150" height="150" src="https://pbs.twimg.com/profile_images/1594451479/afr-logo.jpg" onclick="Talk(\'http://mediaserver3.afa.net:8000/talkhigh.mp3\')"/></a></td>';
+var blocks = document.getElementsByTagName("block");
+var Block = blocks[0];
+tables = document.getElementsByTagName("table");
+Table = tables[1]
+tabes = document.getElementsByTagName("td");
+TR = "Table Row.";
+TR1 = tabes[6];
+TR2 = tabes[7];
+TR3 = tabes[8];
+TR4 = tabes[9];
+TR5 = tabes[10];
+Tunes1 = tabes[15];
+//Tunes1.innerHTML = "#1"
+Tunes2 = tabes[19];
+//Tunes2.innerHTML = "#2"
+Tunes3 = tabes[23];
+//Tunes3.innerHTML = "#3"
+Tunes4 = tabes[27];
+//Tunes4.innerHTML = "#4"
+Tunes5 = tabes[31];
+Tunes5.innerHTML = "#5"
+Tunes6 = tabes[35];
+Tunes6.innerHTML = "#6"
+News1 = tabes[16];
+News2 = tabes[20];
+News3 = tabes[24];
+News4 = tabes[28];
+News5 = tabes[32];
+News6 = tabes[36];
+Sports1 = tabes[17];
+Sports2 = tabes[21];
+Sports3 = tabes[25];
+Sports4 = tabes[29];
+Sports5 = tabes[33];
+Sports6 = tabes[37];
+Teach1 = tabes[18];
+Teach2 = tabes[22];
+Teach3 = tabes[26];
+Teach4 = tabes[30];
+Teach5 = tabes[34];
+Teach6 = tabes[38];
+//Teach5.innerHTML = "Teach5";
+//Teach6.innerHTML = "Teach6";
+//Sports5.innerHTML = "Sports5";
+//Sports6.innerHTML = "Sports6";
+var i = 0;
+var cnn;
+var klove;
+var trc;
+var rapzilla;
+var espn;
+var bbn;
+var fnc;
+var npr;
+var air;
+var nbc;
+var moody;
+var amusic;
+var afr;
+var shine;
+var godsdjs;
+var cbs;
+var vcy;
+
+
+started = 0;
+//document.cookie="cnn=0";
+//document.cookie="trc=0";
+//document.cookie="klove=0";
+function getTimeSince() {
+	return i;
+}
+
+
+
+//alert(full_list);
+var talk = 0
+var music = 0
+var news = 0
+var rap = 0
+var sport = 0
+var word = 0
+var foxn = 0
+var cult = 0
+var bland = 0
+var sports = 0
+var truth = 0
+var milk = 0
+var fam = 0
+var pop = 0
+var dub = 0
+var ball = 0
+var usa = 0
+UpdateRatings()
+full = "Radio Ratings:<br>#1 " + full_list[0] + " seconds<br>#2 " + full_list[1] + " seconds<br>#3 " + full_list[2] + " seconds<br>#4 " + full_list[3] + " seconds<br>#5 " + full_list[4] + " seconds";
+Block.innerHTML = full;
+var Top = "";
+function Talk(url) {
+	just_done = 0;
+	//alert("Hey!");
+	buttons = document.getElementsByTagName("input");
+	iframe = document.getElementsByTagName("iframe");
+	//alert("Hey!");
+	if (url == "scheduler.html" && talk == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		trc = parseInt(getCookie("trc"));
+		if (trc > 0) {
+			trc = trc
+		}
+		else {
+			trc = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		talk = 1;
+		just_done = 1;
+	}
+	if (url == "scheduler.html" && talk == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		talk = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://emf.mp3.miisolutions.net:80/kl/klove_itunes" && music == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		klove = parseInt(getCookie("klove"));
+		if (klove > 0) {
+			klove = klove
+		}
+		else {
+			klove = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		// //alert("It should be removed");
+		music = 1;
+		just_done = 1;
+		//buttons[0].value="          Listen Now          ";
+	}
+	if (url == "http://emf.mp3.miisolutions.net:80/kl/klove_itunes" && music == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = getTimeSince() + klove;
+		//document.cookie="klove=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		music = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://tunein.streamguys1.com/cnn" && news == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		cnn = parseInt(getCookie("cnn"));
+		if ((getCookie("cnn")) == "NaN") {
+			cnn = 0;
+			//alert("CNN seemed to be null.");
+		}
+		if ((getCookie("cnn")) == undefined) {
+			cnn = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		// //alert("It should be removed");
+		news = 1;
+		just_done = 1;
+		//buttons[0].value="          Listen Now          ";
+	}
+	if (url == "http://tunein.streamguys1.com/cnn" && news == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = getTimeSince() + cnn;
+		//document.cookie="cnn=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		news = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://listen.radionomy.com/rapzilla" && rap == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		rapzilla = parseInt(getCookie("trc"));
+		if (rapzilla > 0) {
+			rapzilla = rapzilla
+		}
+		else {
+			rapzilla = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		rap = 1;
+		just_done = 1;
+	}
+	if (url == "http://listen.radionomy.com/rapzilla" && rap == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		rap = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://us-east.edge-1.cis.abacast.net/direct/espn-network-48&source=tunein" && sport == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		espn = parseInt(getCookie("espn"));
+		if (espn > 0) {
+			espn = espn
+		}
+		else {
+			espn = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		sport = 1;
+		just_done = 1;
+	}
+	if (url == "http://us-east.edge-1.cis.abacast.net/direct/espn-network-48&source=tunein" && sport == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		sport = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://bbnmedia-lh.akamaihd.net/i/BibleBroadcasting_Englishios@87472/master.m3u8" && word == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		bbn = parseInt(getCookie("bbn"));
+		if (bbn > 0) {
+			bbn = bbn
+		}
+		else {
+			bbn = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		word = 1;
+		just_done = 1;
+	}
+	if (url == "http://bbnmedia-lh.akamaihd.net/i/BibleBroadcasting_Englishios@87472/master.m3u8" && word == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		word = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://54.80.189.172/foxnewsradio-foxnewsaac-ibc2" && foxn == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		fnc = parseInt(getCookie("fnc"));
+		if (fnc > 0) {
+			fnc = fnc
+		}
+		else {
+			fnc = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		foxn = 1;
+		just_done = 1;
+	}
+	if (url == "http://54.80.189.172/foxnewsradio-foxnewsaac-ibc2" && foxn == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		foxn = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://www.npr.org/streams/mp3/nprlive24.m3u" && cult == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		npr = parseInt(getCookie("npr"));
+		if (npr > 0) {
+			npr = npr
+		}
+		else {
+			npr = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		cult = 1;
+		just_done = 1;
+	}
+	if (url == "http://www.npr.org/streams/mp3/nprlive24.m3u" && cult == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		cult = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://emf.mp3.miisolutions.net:80/a1/air1_itunes" && bland == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		air = parseInt(getCookie("air"));
+		if (air > 0) {
+			air = air
+		}
+		else {
+			air = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		bland = 1;
+		just_done = 1;
+	}
+	if (url == "http://emf.mp3.miisolutions.net:80/a1/air1_itunes" && bland == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		bland = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://icy3.abacast.com/dialglobal-nbcsportsmp3-48" && sports == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		nbc = parseInt(getCookie("nbc"));
+		if (nbc > 0) {
+			nbc = nbc
+		}
+		else {
+			nbc = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		sports = 1;
+		just_done = 1;
+	}
+	if (url == "http://icy3.abacast.com/dialglobal-nbcsportsmp3-48" && sports == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		sports = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://primary.moodyradiostream.org/mbn1.mp3" && truth == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		moody = parseInt(getCookie("moody"));
+		if (moody > 0) {
+			moody = moody
+		}
+		else {
+			moody = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		truth = 1;
+		just_done = 1;
+	}
+	if (url == "http://primary.moodyradiostream.org/mbn1.mp3" && truth == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		truth = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://mediaserver3.afa.net:8000/inspo.mp3" && milk == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		amusic = parseInt(getCookie("amusic"));
+		if (amusic > 0) {
+			amusic = amusic
+		}
+		else {
+			amusic = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		milk = 1;
+		just_done = 1;
+	}
+	if (url == "http://mediaserver3.afa.net:8000/inspo.mp3" && milk == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		milk = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://mediaserver3.afa.net:8000/talkhigh.mp3" && fam == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		afr = parseInt(getCookie("afr"));
+		if (afr > 0) {
+			afr = afr
+		}
+		else {
+			afr = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		fam = 1;
+		just_done = 1;
+	}
+	if (url == "http://mediaserver3.afa.net:8000/talkhigh.mp3" && fam == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		fam = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://83.149.126.10/listen/2q2gvgzkb" && pop == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		shine = parseInt(getCookie("shine"));
+		if (shine > 0) {
+			shine = shine
+		}
+		else {
+			shine = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		pop = 1;
+		just_done = 1;
+	}
+	if (url == "http://83.149.126.10/listen/2q2gvgzkb" && pop == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		pop = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://godsdjsradio.com:8080/stream" && dub == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		godsdjs = parseInt(getCookie("shine"));
+		if (godsdjs > 0) {
+			godsdjs = godsdjs
+		}
+		else {
+			godsdjs = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		dub = 1;
+		just_done = 1;
+	}
+	if (url == "http://godsdjsradio.com:8080/stream" && dub == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		dub = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://8733.live.streamtheworld.com:3690/CBSSPORTS_SC" && ball == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		cbs = parseInt(getCookie("cbs"));
+		if (cbs > 0) {
+			cbs = cbs
+		}
+		else {
+			cbs = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		ball = 1;
+		just_done = 1;
+	}
+	if (url == "http://8733.live.streamtheworld.com:3690/CBSSPORTS_SC" && ball == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		ball = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+	if (url == "http://72.13.86.203:8000/listen.pls" && usa == 0 && just_done == 0) {
+		talk = 0
+		music = 0
+		news = 0
+		rap = 0
+		sport = 0
+		word = 0
+		foxn = 0
+		cult = 0
+		bland = 0
+		sports = 0
+		truth = 0
+		milk = 0
+		fam = 0
+		pop = 0
+		dub = 0
+		ball = 0
+		usa = 0
+		vcy = parseInt(getCookie("vcy"));
+		if (vcy > 0) {
+			vcy = vcy
+		}
+		else {
+			vcy = 0;
+		}
+		//alert("It started.");
+		stop = 0;
+		iframe[0].src=url;
+		//alert("It should be removed");
+		usa = 1;
+		just_done = 1;
+	}
+	if (url == "http://72.13.86.203:8000/listen.pls" && usa == 1 && just_done == 0) {
+		//alert("It stopped.");
+		stop = 0;
+		full_time = Time() + trc;
+		//document.cookie="trc=" + full_time;
+		iframe[0].src="";
+		// //alert("It should be removed");
+		usa = 0;
+		just_done = 1;
+		//alert(full_time);
+	}
+}
+function getTime(eye) {
+	return eye;
+}
+var stop = 2;
+setInterval(Time, 1000);
+function Time() {
+	iframe = document.getElementsByTagName("iframe");
+	playin = iframe[0].src;
+	//alert("Iframe is " + playin);
+	trc = parseInt(getCookie("trc"));
+	cnn = parseInt(getCookie("cnn"));
+	klove = parseInt(getCookie("klove"));
+	rapzilla = parseInt(getCookie("rapzilla"));
+	bbn = parseInt(getCookie("bbn"));
+	fnc = parseInt(getCookie("fnc"));
+	npr = parseInt(getCookie("npr"));
+	air = parseInt(getCookie("air"));
+	nbc = parseInt(getCookie("nbc"));
+	moody = parseInt(getCookie("moody"));
+	amusic = parseInt(getCookie("amusic"));
+	afr = parseInt(getCookie("afr"));
+	shine = parseInt(getCookie("shine"));
+	godsdjs = parseInt(getCookie("godsdjs"));
+	cbs = parseInt(getCookie("cbs"));
+	vcy = parseInt(getCookie("vcy"));
+	if (trc > 0) {
+		trc = parseInt(getCookie("trc"));
+	}
+	else {
+		trc = 0;
+	}
+	if (cnn > 0) {
+		cnn = parseInt(getCookie("cnn"));
+	}
+	else {
+		cnn = 0;
+	}
+	if (klove > 0) {
+		klove = parseInt(getCookie("klove"));
+	}
+	else {
+		klove = 0;
+	}
+	if (rapzilla > 0) {
+		rapzilla = parseInt(getCookie("rapzilla"));
+	}
+	else {
+		rapzilla = 0;
+	}
+	if (espn > 0) {
+		espn = parseInt(getCookie("espn"));
+	}
+	else {
+		espn = 0;
+	}
+	if (bbn > 0) {
+		bbn = parseInt(getCookie("bbn"));
+	}
+	else {
+		bbn = 0;
+	}
+	if (fnc > 0) {
+		fnc = parseInt(getCookie("fnc"));
+	}
+	else {
+		fnc = 0;
+	}
+	if (npr > 0) {
+		npr = parseInt(getCookie("npr"));
+	}
+	else {
+		npr = 0;
+	}
+	if (air > 0) {
+		air = parseInt(getCookie("air"));
+	}
+	else {
+		air = 0;
+	}
+	if (nbc > 0) {
+		nbc = parseInt(getCookie("nbc"));
+	}
+	else {
+		nbc = 0;
+	}
+	if (moody > 0) {
+		moody = parseInt(getCookie("moody"));
+	}
+	else {
+		moody = 0;
+	}
+	if (amusic > 0) {
+		amusic = parseInt(getCookie("amusic"));
+	}
+	else {
+		amusic = 0;
+	}
+	if (afr > 0) {
+		afr = parseInt(getCookie("afr"));
+	}
+	else {
+		afr = 0;
+	}
+	if (shine > 0) {
+		shine = parseInt(getCookie("shine"));
+	}
+	else {
+		shine = 0;
+	}
+	if (godsdjs > 0) {
+		godsdjs = parseInt(getCookie("godsdjs"));
+	}
+	else {
+		godsdjs = 0;
+	}
+	if (cbs > 0) {
+		cbs = parseInt(getCookie("cbs"));
+	}
+	else {
+		cbs = 0;
+	}
+	if (vcy > 0) {
+		vcy = parseInt(getCookie("vcy"));
+	}
+	else {
+		vcy = 0;
+	}
+	//alert(playin.indexOf("klove_itunes"));
+	if (playin.indexOf("tunein.streamguys1.com") != -1 && stop == 0) {
+		ammount = cnn + 1;
+		document.cookie="cnn=" + ammount;
+	}
+	if (playin.indexOf("klove_itunes") != -1  && stop == 0) {
+		ammount = klove + 1;
+		document.cookie="klove=" + ammount;
+	}
+	if (playin.indexOf("scheduler.html") != -1  && stop == 0) {
+		ammount = trc + 1;
+		//alert(ammount);
+		document.cookie="trc=" + ammount;
+	}
+	if (playin.indexOf("rapzilla") != -1  && stop == 0) {
+		ammount = rapzilla + 1;
+		//alert(ammount);
+		document.cookie="rapzilla=" + ammount;
+	}
+	if (playin.indexOf("edge-1.cis.") != -1  && stop == 0) {
+		ammount = espn + 1;
+		//alert(ammount);
+		document.cookie="espn=" + ammount;
+	}
+	if (playin.indexOf("BibleBroadcasting_Englishios") != -1  && stop == 0) {
+		ammount = bbn + 1;
+		//alert(ammount);
+		document.cookie="bbn=" + ammount;
+	}
+	if (playin.indexOf("foxnewsradio-foxnewsaac") != -1  && stop == 0) {
+		ammount = fnc + 1;
+		//alert(ammount);
+		document.cookie="fnc=" + ammount;
+	}
+	if (playin.indexOf("nprlive24.m3u") != -1  && stop == 0) {
+		ammount = npr + 1;
+		//alert(ammount);
+		document.cookie="npr=" + ammount;
+	}
+	if (playin.indexOf("air1_itunes") != -1  && stop == 0) {
+		ammount = air + 1;
+		//alert(ammount);
+		document.cookie="air=" + ammount;
+	}
+	if (playin.indexOf("nbcsportsmp3-48") != -1  && stop == 0) {
+		ammount = nbc + 1;
+		//alert(ammount);
+		document.cookie="nbc=" + ammount;
+	}
+	if (playin.indexOf("mbn1.mp3") != -1  && stop == 0) {
+		ammount = moody + 1;
+		//alert(ammount);
+		document.cookie="moody=" + ammount;
+	}
+	if (playin.indexOf("inspo.mp3") != -1  && stop == 0) {
+		ammount = amusic + 1;
+		//alert(ammount);
+		document.cookie="amusic=" + ammount;
+	}
+	if (playin.indexOf("talkhigh.mp3") != -1  && stop == 0) {
+		ammount = afr + 1;
+		//alert(ammount);
+		document.cookie="afr=" + ammount;
+	}
+	if (playin.indexOf("2q2gvgzkb") != -1  && stop == 0) {
+		ammount = shine + 1;
+		//alert(ammount);
+		document.cookie="shine=" + ammount;
+	}
+	if (playin.indexOf("http://godsdjsradio.com") != -1  && stop == 0) {
+		ammount = godsdjs + 1;
+		//alert(ammount);
+		document.cookie="godsdjs=" + ammount;
+	}
+	if (playin.indexOf("CBSSPORTS_SC") != -1  && stop == 0) {
+		ammount = cbs + 1;
+		//alert(ammount);
+		document.cookie="cbs=" + ammount;
+	}
+	if (playin.indexOf("13.86.203") != -1  && stop == 0) {
+		ammount = vcy + 1;
+		//alert(ammount);
+		document.cookie="vcy=" + ammount;
+	}
+	if (stop == 0) {
+	i = i + 1;
+	//alert(i);
+	}
+	if (stop == 1) {
+	//alert("I'm done. It's " + i);
+	stop = 0;
+	}
+	if (stop == 2) {
+	i = i;
+	}
+	UpdateRatings();
+}
+function UpdateRatings() {
+	trc = parseInt(getCookie("trc"));
+	cnn = parseInt(getCookie("cnn"));
+	klove = parseInt(getCookie("klove"));
+	rapzilla = parseInt(getCookie("rapzilla"));
+	espn = parseInt(getCookie("espn"));
+	bbn = parseInt(getCookie("bbn"));
+	fnc = parseInt(getCookie("fnc"));
+	npr = parseInt(getCookie("npr"));
+	air = parseInt(getCookie("air"));
+	nbc = parseInt(getCookie("nbc"));
+	moody = parseInt(getCookie("moody"));
+	amusic = parseInt(getCookie("amusic"));
+	afr = parseInt(getCookie("afr"));
+	shine = parseInt(getCookie("shine"));
+	godsdjs = parseInt(getCookie("godsdjs"));
+	cbs = parseInt(getCookie("cbs"));
+	vcy = parseInt(getCookie("vcy"));
+	if (trc > 0) {
+		trc = parseInt(getCookie("trc"));
+	}
+	else {
+		trc = 0;
+	}
+	if (cnn > 0) {
+		cnn = parseInt(getCookie("cnn"));
+	}
+	else {
+		cnn = 0;
+	}
+	if (klove > 0) {
+		klove = parseInt(getCookie("klove"));
+	}
+	else {
+		klove = 0;
+	}
+	
+	if (rapzilla > 0) {
+		rapzilla = parseInt(getCookie("rapzilla"));
+	}
+	else {
+		rapzilla = 0;
+	}
+	if (espn > 0) {
+		espn = parseInt(getCookie("espn"));
+	}
+	else {
+		espn = 0;
+	}
+	if (bbn > 0) {
+		bbn = parseInt(getCookie("bbn"));
+	}
+	else {
+		bbn = 0;
+	}
+	if (fnc > 0) {
+		fnc = parseInt(getCookie("fnc"));
+	}
+	else {
+		fnc = 0;
+	}
+	if (npr > 0) {
+		npr = parseInt(getCookie("npr"));
+	}
+	else {
+		npr = 0;
+	}
+	if (air > 0) {
+		air = parseInt(getCookie("air"));
+	}
+	else {
+		air = 0;
+	}
+	if (nbc > 0) {
+		nbc = parseInt(getCookie("nbc"));
+	}
+	else {
+		nbc = 0;
+	}
+	if (moody > 0) {
+		moody = parseInt(getCookie("moody"));
+	}
+	else {
+		moody = 0;
+	}
+	if (amusic > 0) {
+		amusic = parseInt(getCookie("amusic"));
+	}
+	else {
+		amusic = 0;
+	}
+	if (afr > 0) {
+		afr = parseInt(getCookie("afr"));
+	}
+	else {
+		afr = 0;
+	}
+	if (shine > 0) {
+		shine = parseInt(getCookie("shine"));
+	}
+	else {
+		shine = 0;
+	}
+	if (godsdjs > 0) {
+		godsdjs = parseInt(getCookie("godsdjs"));
+	}
+	else {
+		godsdjs = 0;
+	}
+	if (cbs > 0) {
+		cbs = parseInt(getCookie("cbs"));
+	}
+	else {
+		cbs = 0;
+	}
+	if (vcy > 0) {
+		vcy = parseInt(getCookie("vcy"));
+	}
+	else {
+		vcy = 0;
+	}
+	list = [trc, klove, cnn, rapzilla, espn, bbn, fnc, npr, air, nbc, moody, amusic, afr, shine, godsdjs, cbs, vcy];
+	sportsList = [espn, nbc, cbs]
+	newsList = [trc, cnn, fnc, npr, afr]
+	musicList = [klove, rapzilla, air, amusic, shine, godsdjs]
+	teachList = [bbn, moody, afr, vcy]
+	full_Sports = sportsList.sort(function(a, b){return b-a});
+	full_News = newsList.sort(function(a, b){return b-a});
+	full_Music = musicList.sort(function(a, b){return b-a});
+	full_Teach = teachList.sort(function(a, b){return b-a});
+	full_list = list.sort(function(a, b){return b-a});
+	number1 = full_list[0];
+	if (full_list[0] == rapzilla) {
+		TR1.innerHTML = rapzillaicon;
+		full_list[0] = "Rapzilla: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(media/white.png)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://listen.radionomy.com/rapzilla'); }
+		document.getElementsByTagName("img")[0].src="media/rapzilla.png";
+		Top = "rapzilla";
+	}
+	if (full_list[0] == trc) {
+		TR1.innerHTML = "<a href='javascript:void(0)'>" + TRCicon;
+		full_list[0] = "Talk Radio Channel: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(media/americ11.jpg)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('scheduler.html'); }
+		document.getElementsByTagName("img")[0].src="media/microphone-clipart-microphone-clip-art-black-and-white.png";
+		Top = "trc";
+		
+	}
+	if (full_list[0] == cnn) {
+		TR1.innerHTML = CNNicon;
+		full_list[0] = "CNN: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(http://img3.findthebest.com/sites/default/files/2307/media/images/t2/CNN_Red_1409381.png)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://tunein.streamguys1.com/cnn'); }
+		document.getElementsByTagName("img")[0].src="http://img3.wikia.nocookie.net/__cb20140910201936/logopedia/images/4/47/CNN_International_logo_2014.png";
+		Top = "cnn";
+	}
+	if (full_list[0] == klove) {
+		TR1.innerHTML = KLOVEicon;
+		full_list[0] = "K-LOVE: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(http://www.theilsmag.com/wp-content/uploads/2013/02/black.jpg)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://emf.mp3.miisolutions.net:80/kl/klove_itunes'); }
+		document.getElementsByTagName("img")[0].src="http://cdn.klove.com/images/socialnetworking/FacebookThumbnailKlove.jpg";
+		Top = "klove";
+	}
+	if (full_list[0] == espn) {
+		TR1.innerHTML = ESPNicon;
+		full_list[0] = "ESPN: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(media/white.png)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://us-east.edge-1.cis.abacast.net/direct/espn-network-48&source=tunein'); }
+		document.getElementsByTagName("img")[0].src="media/MZ806_RS19827_ESPN_Radio_logo.jpg";
+		Top = "espn";
+	}
+	if (full_list[0] == bbn) {
+		TR1.innerHTML = BBNicon;
+		full_list[0] = "BBN: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(media/white.png)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://bbnmedia-lh.akamaihd.net/i/BibleBroadcasting_Englishios@87472/master.m3u8'); }
+		document.getElementsByTagName("img")[0].src="media/th.jpeg";
+		Top = "bbn";
+	}
+	if (full_list[0] == fnc) {
+		TR1.innerHTML = FNCicon;
+		full_list[0] = "Fox News Radio: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(media/black.png)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://54.80.189.172/foxnewsradio-foxnewsaac-ibc2'); }
+		document.getElementsByTagName("img")[0].src="media/Fox News Radio.png";
+		Top = "fnc";
+	}
+	if (full_list[0] == npr) {
+		TR1.innerHTML = NPRicon;
+		full_list[0] = "NPR: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(media/white.png)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://www.npr.org/streams/mp3/nprlive24.m3u'); }
+		document.getElementsByTagName("img")[0].src="http://www.niemanlab.org/images/npr-square-logo.jpg";
+		Top = "npr";
+	}
+	if (full_list[0] == air) {
+		TR1.innerHTML = AIRicon;
+		full_list[0] = "AIR: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(http://media-cache-ec0.pinimg.com/736x/9c/a7/75/9ca7752f6656d397ee0acfa597cd915c.jpg)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://emf.mp3.miisolutions.net:80/a1/air1_itunes'); }
+		document.getElementsByTagName("img")[0].src="http://media-cache-ec0.pinimg.com/736x/9c/a7/75/9ca7752f6656d397ee0acfa597cd915c.jpg";
+		Top = "air";
+	}
+	if (full_list[0] == nbc) {
+		TR1.innerHTML = NBCicon;
+		full_list[0] = "NBC Sports Radio: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(media/white.png)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://icy3.abacast.com/dialglobal-nbcsportsmp3-48'); }
+		document.getElementsByTagName("img")[0].src="http://cdn-radiotime-logos.tunein.com/s179779q.png";
+		Top = "nbc";
+	}
+	if (full_list[0] == moody) {
+		TR1.innerHTML = MOODYicon;
+		full_list[0] = "Moody Radio: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(media/black.png)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://primary.moodyradiostream.org/mbn1.mp3'); }
+		document.getElementsByTagName("img")[0].src="http://scupe.org/wp-content/uploads/2013/01/RadioMoody.jpg";
+		Top = "moody";
+	}
+	if (full_list[0] == amusic) {
+		TR1.innerHTML = MUSICicon;
+		full_list[0] = "AFR Music: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(media/white.png)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://mediaserver3.afa.net:8000/inspo.mp3'); }
+		document.getElementsByTagName("img")[0].src="https://lh3.ggpht.com/ZhD-oq3XXAgkXT1LnO7u7BqjBahofCqCH2Yl-N5EaRxv595faRIqNBJB4g2cJ08HUQ=w300";
+		Top = "amusic";
+	}
+	if (full_list[0] == afr) {
+		TR1.innerHTML = AFRicon;
+		full_list[0] = "AFR Talk: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(media/white.png)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://mediaserver3.afa.net:8000/talkhigh.mp3'); }
+		document.getElementsByTagName("img")[0].src="https://pbs.twimg.com/profile_images/1594451479/afr-logo.jpg";
+		Top = "afr";
+	}
+	if (full_list[0] == shine) {
+		TR1.innerHTML = POPicon;
+		full_list[0] = "Radio iShine: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(media/white.png)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://83.149.126.10/listen/2q2gvgzkb'); }
+		document.getElementsByTagName("img")[0].src="http://media.salemwebnetwork.com/TodaysChristianMusic/ImageGallery/news/large/201204/iShine-Logo.jpg";
+		Top = "shine";
+	}
+	if (full_list[0] == godsdjs) {
+		TR1.innerHTML = DUBicon;
+		full_list[0] = "God's DJs Radio: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(media/white.png)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://godsdjsradio.com:8080/stream'); }
+		document.getElementsByTagName("img")[0].src="http://www.godsdjs.com/v3/wp-content/uploads/2013/08/mobileradiologo.png";
+		Top = "godsdjs";
+	}
+	if (full_list[0] == cbs) {
+		TR1.innerHTML = BALLicon;
+		full_list[0] = "CBS Sports Radio: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(media/white.png)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://8733.live.streamtheworld.com:3690/CBSSPORTS_SC'); }
+		document.getElementsByTagName("img")[0].src="http://cdn-radiotime-logos.tunein.com/s188593q.png";
+		Top = "cbs";
+	}
+	if (full_list[0] == vcy) {
+		TR1.innerHTML = VCYicon;
+		full_list[0] = "VCY America: " + full_list[0];
+		document.getElementById("banner").style.backgroundImage = "url(media/white.png)";
+		document.getElementsByTagName("input")[0].onclick = function onclick(event) { Talk('http://72.13.86.203:8000/listen.pls'); }
+		document.getElementsByTagName("img")[0].src="http://cdn-radiotime-logos.tunein.com/s36008q.png";
+		Top = "vcy";
+	}
+	if (full_list[1] == afr) {
+		TR2.innerHTML = AFRicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "AFR Talk: " + full_list[1];
+	}
+	if (full_list[1] == cbs) {
+		TR2.innerHTML = BALLicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "CBS Sports Radio: " + full_list[1];
+	}
+	if (full_list[1] == shine) {
+		TR2.innerHTML = POPicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "Radio iShine: " + full_list[1];
+	}
+	if (full_list[1] == nbc) {
+		TR2.innerHTML = NBCicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "NBC Sports Radio: " + full_list[1];
+	}
+	if (full_list[1] == amusic) {
+		TR2.innerHTML = MUSICicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "AFR Music: " + full_list[1];
+	}
+	if (full_list[1] == moody) {
+		TR2.innerHTML = MOODYicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "Moody Radio: " + full_list[1];
+	}
+	if (full_list[1] == godsdjs) {
+		TR2.innerHTML = DUBicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "God's DJs Radio: " + full_list[1];
+	}
+	if (full_list[1] == air) {
+		TR2.innerHTML = AIRicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "AIR: " + full_list[1];
+	}
+	if (full_list[1] == npr) {
+		TR2.innerHTML = NPRicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "NPR: " + full_list[1];
+	}
+	if (full_list[1] == bbn) {
+		TR2.innerHTML = BBNicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "BBN: " + full_list[1];
+	}
+	if (full_list[1] == rapzilla) {
+		TR2.innerHTML = rapzillaicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "Rapzilla: " + full_list[1];
+	}
+	if (full_list[1] == fnc) {
+		TR2.innerHTML = FNCicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "Fox News Radio: " + full_list[1];
+	}
+	if (full_list[1] == espn) {
+		TR2.innerHTML = ESPNicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "ESPN: " + full_list[1];
+	}
+	if (full_list[1] == klove) {
+		TR2.innerHTML = KLOVEicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "K-LOVE: " + full_list[1];
+	}
+	if (full_list[1] == trc) {
+		TR2.innerHTML = TRCicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "Talk Radio Channel: " + full_list[1];
+	}
+	if (full_list[1] == cnn) {
+		TR2.innerHTML = CNNicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "CNN: " + full_list[1];
+	}
+	if (full_list[1] == vcy) {
+		TR2.innerHTML = VCYicon;
+		full_list[1] = full_list[1] - number1
+		full_list[1] = "VCY America: " + full_list[1];
+	}
+	if (full_list[2] == klove) {
+		TR3.innerHTML = KLOVEicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "K-LOVE: " + full_list[2];
+	}
+	if (full_list[2] == afr) {
+		TR3.innerHTML = AFRicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "AFR Talk: " + full_list[2];
+	}
+	if (full_list[2] == cnn) {
+		TR3.innerHTML = CNNicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "CNN: " + full_list[2];
+	}
+	if (full_list[2] == moody) {
+		TR3.innerHTML = MOODYicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "Moody Radio: " + full_list[2];
+	}
+	if (full_list[2] == amusic) {
+		TR3.innerHTML = MUSICicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "AFR Music: " + full_list[2];
+	}
+	if (full_list[2] == air) {
+		TR3.innerHTML = AIRicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "AIR: " + full_list[2];
+	}
+	if (full_list[2] == shine) {
+		TR3.innerHTML = POPicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "Radio iShine: " + full_list[2];
+	}
+	if (full_list[2] == godsdjs) {
+		TR3.innerHTML = DUBicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "God's DJs Radio: " + full_list[2];
+	}
+	if (full_list[2] == cbs) {
+		TR3.innerHTML = BALLicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "CBS Sports Radio: " + full_list[2];
+	}
+	if (full_list[2] == trc) {
+		TR3.innerHTML = TRCicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "Talk Radio Channel: " + full_list[2];
+	}
+	if (full_list[2] == vcy) {
+		TR3.innerHTML = VCYicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "VCY America: " + full_list[2];
+	}
+	if (full_list[2] == rapzilla) {
+		TR3.innerHTML = rapzillaicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "Rapzilla: " + full_list[2];
+	}
+	if (full_list[2] == espn) {
+		TR3.innerHTML = ESPNicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "ESPN: " + full_list[2];
+	}
+	if (full_list[2] == nbc) {
+		TR3.innerHTML = NBCicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "NBC Sports Radio: " + full_list[2];
+	}
+	if (full_list[2] == npr) {
+		TR3.innerHTML = NPRicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "NPR: " + full_list[2];
+	}
+	if (full_list[2] == bbn) {
+		TR3.innerHTML = BBNicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "BBN: " + full_list[2];
+	}
+	if (full_list[2] == fnc) {
+		TR3.innerHTML = FNCicon;
+		full_list[2] = full_list[2] - number1
+		full_list[2] = "Fox News Radio: " + full_list[2];
+	}
+	if (full_list[3] == cnn) {
+		TR4.innerHTML = CNNicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "CNN: " + full_list[3];
+	}
+	if (full_list[3] == air) {
+		TR4.innerHTML = AIRicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "AIR: " + full_list[3];
+	}
+	if (full_list[3] == klove) {
+		TR4.innerHTML = KLOVEicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "K-LOVE: " + full_list[3];
+	}
+	if (full_list[3] == afr) {
+		TR4.innerHTML = AFRicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "AFR Talk: " + full_list[3];
+	}
+	if (full_list[3] == vcy) {
+		TR4.innerHTML = VCYicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "VCY America: " + full_list[3];
+	}
+	if (full_list[3] == moody) {
+		TR4.innerHTML = MOODYicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "Moody Radio: " + full_list[3];
+	}
+	if (full_list[3] == amusic) {
+		TR4.innerHTML = MUSICicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "AFR Music: " + full_list[3];
+	}
+	if (full_list[3] == cbs) {
+		TR4.innerHTML = BALLicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "CBS Sports Radio: " + full_list[3];
+	}
+	if (full_list[3] == trc) {
+		TR4.innerHTML = TRCicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "Talk Radio Channel: " + full_list[3];
+	}
+	if (full_list[3] == rapzilla) {
+		TR4.innerHTML = rapzillaicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "Rapzilla: " + full_list[3];
+	}
+	if (full_list[3] == espn) {
+		TR4.innerHTML = ESPNicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "ESPN: " + full_list[3];
+	}
+	if (full_list[3] == npr) {
+		TR4.innerHTML = NPRicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "NPR: " + full_list[3];
+	}
+	if (full_list[3] == shine) {
+		TR4.innerHTML = POPicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "Radio iShine: " + full_list[3];
+	}
+	if (full_list[3] == bbn) {
+		TR4.innerHTML = BBNicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "BBN: " + full_list[3];
+	}
+	if (full_list[3] == fnc) {
+		TR4.innerHTML = FNCicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "Fox News Radio: " + full_list[3];
+	}
+	if (full_list[3] == nbc) {
+		TR4.innerHTML = NBCicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "NBC Sports Radio: " + full_list[3];
+	}
+	if (full_list[3] == godsdjs) {
+		TR4.innerHTML = DUBicon;
+		full_list[3] = full_list[3] - number1
+		full_list[3] = "God's DJs Radio: " + full_list[3];
+	}
+	if (full_list[4] == nbc) {
+		TR5.innerHTML = NBCicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "NBC Sports Radio: " + full_list[4];
+	}
+	if (full_list[4] == klove) {
+		TR5.innerHTML = KLOVEicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "K-LOVE: " + full_list[4];
+	}
+	if (full_list[4] == cnn) {
+		TR5.innerHTML = CNNicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "CNN: " + full_list[4];
+	}
+	if (full_list[4] == air) {
+		TR5.innerHTML = AIRicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "AIR: " + full_list[4];
+	}
+	if (full_list[4] == trc) {
+		TR5.innerHTML = TRCicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "Talk Radio Channel: " + full_list[4];
+	}
+	if (full_list[4] == vcy) {
+		TR5.innerHTML = VCYicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "VCY America: " + full_list[4];
+	}
+	if (full_list[4] == rapzilla) {
+		TR5.innerHTML = rapzillaicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "Rapzilla: " + full_list[4];
+	}
+	if (full_list[4] == espn) {
+		TR5.innerHTML = ESPNicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "ESPN: " + full_list[4];
+	}
+	if (full_list[4] == afr) {
+		TR5.innerHTML = AFRicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "AFR Talk: " + full_list[4];
+	}
+	if (full_list[4] == npr) {
+		TR5.innerHTML = NPRicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "NPR: " + full_list[4];
+	}
+	if (full_list[4] == godsdjs) {
+		TR5.innerHTML = DUBicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "God's DJs Radio: " + full_list[4];
+	}
+	if (full_list[4] == bbn) {
+		TR5.innerHTML = BBNicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "BBN: " + full_list[4];
+	}
+	if (full_list[4] == moody) {
+		TR5.innerHTML = MOODYicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "Moody Radio: " + full_list[4];
+	}
+	if (full_list[4] == fnc) {
+		TR5.innerHTML = FNCicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "Fox News Radio: " + full_list[4];
+	}
+	if (full_list[4] == shine) {
+		TR5.innerHTML = POPicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "Radio iShine: " + full_list[4];
+	}
+	if (full_list[4] == amusic) {
+		TR4.innerHTML = MUSICicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "AFR Music: " + full_list[4];
+	}
+	if (full_list[4] == cbs) {
+		TR5.innerHTML = BALLicon;
+		full_list[4] = full_list[4] - number1
+		full_list[4] = "CBS Sports Radio: " + full_list[4];
+	}
+	if (Top == "cnn" && news == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "cnn" && news == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "trc" && talk == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "trc" && talk == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "klove" && music == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "klove" && music == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "rapzilla" && rap == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "rapzilla" && rap == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "espn" && sport == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "espn" && sport == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "bbn" && word == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "bbn" && word == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "fnc" && foxn == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "fnc" && foxn == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "npr" && cult == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "npr" && cult == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "air" && bland == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "air" && bland == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "nbc" && sports == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "nbc" && sports == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "moody" && truth == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "moody" && truth == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "amusic" && milk == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "amusic" && milk == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "afr" && fam == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "afr" && fam == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "shine" && pop == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "shine" && pop == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "godsdjs" && dub == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "godsdjs" && dub == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "cbs" && ball == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "cbs" && ball == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	if (Top == "vcy" && usa == 0) {
+		buttons[0].value="          Listen Now          ";
+	}
+	if (Top == "vcy" && usa == 1) {
+		buttons[0].value="          Stop Listening          ";
+	}
+	full = "Radio Ratings:<br>#1 " + full_list[0] + " seconds<br>#2 " + full_list[1] + " seconds<br>#3 " + full_list[2] + " seconds<br>#4 " + full_list[3] + " seconds<br>#5 " + full_list[4] +" seconds";
+	Block.innerHTML = full;
+	if (full_Sports[0] == nbc) {
+		Sport1 = full_Sports[0]
+		Sports1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://icy3.abacast.com/dialglobal-nbcsportsmp3-48')\">NBC Sports Radio: " + full_Sports[0];
+	}
+	if (full_Sports[0] == cbs) {
+		Sport1 = full_Sports[0]
+		Sports1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://8733.live.streamtheworld.com:3690/CBSSPORTS_SC')\">CBS Sports Radio: " + full_Sports[0];
+	}
+	if (full_Sports[0] == espn) {
+		Sport1 = full_Sports[0]
+		Sports1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://us-east.edge-1.cis.abacast.net/direct/espn-network-48&source=tunein')\">ESPN Radio: " + full_Sports[0];
+	}
+	if (full_Sports[1] == espn) {
+		full_Sports[1] = full_Sports[1] - Sport1;
+		Sports2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://us-east.edge-1.cis.abacast.net/direct/espn-network-48&source=tunein')\">ESPN Radio: " + full_Sports[1];
+	}
+	if (full_Sports[1] == cbs) {
+		full_Sports[1] = full_Sports[1] - Sport1;
+		Sports2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://8733.live.streamtheworld.com:3690/CBSSPORTS_SC')\">CBS Sports Radio: " + full_Sports[1];
+	}
+	if (full_Sports[1] == nbc) {
+		full_Sports[1] = full_Sports[1] - Sport1;
+		Sports2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://icy3.abacast.com/dialglobal-nbcsportsmp3-48')\">NBC Sports Radio: " + full_Sports[1];
+	}
+	if (full_Sports[2] == espn) {
+		full_Sports[2] = full_Sports[2] - Sport1;
+		Sports3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://us-east.edge-1.cis.abacast.net/direct/espn-network-48&source=tunein')\">ESPN Radio: " + full_Sports[2];
+	}
+	if (full_Sports[2] == nbc) {
+		full_Sports[2] = full_Sports[2] - Sport1;
+		Sports3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://icy3.abacast.com/dialglobal-nbcsportsmp3-48')\">NBC Sports Radio: " + full_Sports[2];
+	}
+	if (full_Sports[2] == cbs) {
+		full_Sports[2] = full_Sports[1] - Sport1;
+		Sports3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://8733.live.streamtheworld.com:3690/CBSSPORTS_SC')\">CBS Sports Radio: " + full_Sports[2];
+	}
+	if (full_Music[0] == klove) {
+		Tune1 = full_Music[0]
+		Tunes1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://emf.mp3.miisolutions.net:80/kl/klove_itunes')\">K-Love: " + full_Music[0];
+	}
+	if (full_Music[0] == rapzilla) {
+		Tune1 = full_Music[0]
+		Tunes1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://listen.radionomy.com/rapzilla')\">Rapzilla: " + full_Music[0];
+	}
+	if (full_Music[0] == air) {
+		Tune1 = full_Music[0]
+		Tunes1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://emf.mp3.miisolutions.net:80/a1/air1_itunes')\">Air1: " + full_Music[0];
+	}
+	if (full_Music[0] == amusic) {
+		Tune1 = full_Music[0]
+		Tunes1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/inspo.mp3')\">AFR Music: " + full_Music[0];
+	}
+	if (full_Music[0] == shine) {
+		Tune1 = full_Music[0]
+		Tunes1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('scheduler.html')\"><a href=\"javascript:void(0)\" onClick=\"Talk('http://83.149.126.10/listen/2q2gvgzkb')\">Radio iShine: " + full_Music[0];
+	}
+	if (full_Music[0] == godsdjs) {
+		Tune1 = full_Music[0]
+		Tunes1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://godsdjsradio.com:8080/stream')\">God's DJs: " + full_Music[0];
+	}
+	if (full_Music[1] == godsdjs) {
+		full_Music[1] = full_Music[1] - Tune1;
+		Tunes2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://godsdjsradio.com:8080/stream')\">God's DJs: " + full_Music[1];
+	}
+	if (full_Music[1] == klove) {
+		full_Music[1] = full_Music[1] - Tune1;
+		Tunes2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://emf.mp3.miisolutions.net:80/kl/klove_itunes')\">K-Love: " + full_Music[1];
+	}
+	if (full_Music[1] == rapzilla) {
+		full_Music[1] = full_Music[1] - Tune1;
+		Tunes2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://listen.radionomy.com/rapzilla')\">Rapzilla: " + full_Music[1];
+	}
+	if (full_Music[1] == air) {
+		full_Music[1] = full_Music[1] - Tune1;
+		Tunes2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://emf.mp3.miisolutions.net:80/a1/air1_itunes')\">Air1: " + full_Music[1];
+	}
+	if (full_Music[1] == amusic) {
+		full_Music[1] = full_Music[1] - Tune1;
+		Tunes2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/inspo.mp3')\">AFR Music: " + full_Music[1];
+	}
+	if (full_Music[1] == shine) {
+		full_Music[1] = full_Music[1] - Tune1;
+		Tunes2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://83.149.126.10/listen/2q2gvgzkb')\">Radio iShine: " + full_Music[1];
+	}
+	if (full_Music[2] == shine) {
+		full_Music[2] = full_Music[2] - Tune1;
+		Tunes3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://83.149.126.10/listen/2q2gvgzkb')\">Radio iShine: " + full_Music[2];
+	}
+	if (full_Music[2] == klove) {
+		full_Music[2] = full_Music[2] - Tune1;
+		Tunes3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://emf.mp3.miisolutions.net:80/kl/klove_itunes')\">K-Love: " + full_Music[2];
+	}
+	if (full_Music[2] == rapzilla) {
+		full_Music[2] = full_Music[2] - Tune1;
+		Tunes3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://listen.radionomy.com/rapzilla')\">Rapzilla: " + full_Music[2];
+	}
+	if (full_Music[2] == air) {
+		full_Music[2] = full_Music[2] - Tune1;
+		Tunes3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://emf.mp3.miisolutions.net:80/a1/air1_itunes')\">Air1: " + full_Music[2];
+	}
+	if (full_Music[2] == amusic) {
+		full_Music[2] = full_Music[2] - Tune1;
+		Tunes3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/inspo.mp3')\">AFR Music: " + full_Music[2];
+	}
+	if (full_Music[2] == godsdjs) {
+		full_Music[2] = full_Music[2] - Tune1;
+		Tunes3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://godsdjsradio.com:8080/stream')\">God's DJs: " + full_Music[2];
+	}
+	if (full_Music[3] == amusic) {
+		full_Music[3] = full_Music[3] - Tune1;
+		Tunes4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/inspo.mp3')\">AFR Music: " + full_Music[3];
+	}
+	if (full_Music[3] == klove) {
+		full_Music[3] = full_Music[3] - Tune1;
+		Tunes4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://emf.mp3.miisolutions.net:80/kl/klove_itunes')\">K-Love: " + full_Music[3];
+	}
+	if (full_Music[3] == rapzilla) {
+		full_Music[3] = full_Music[3] - Tune1;
+		Tunes4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://listen.radionomy.com/rapzilla')\">Rapzilla: " + full_Music[3];
+	}
+	if (full_Music[3] == air) {
+		full_Music[3] = full_Music[3] - Tune1;
+		Tunes4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://emf.mp3.miisolutions.net:80/a1/air1_itunes')\">Air1: " + full_Music[3];
+	}
+	if (full_Music[3] == shine) {
+		full_Music[3] = full_Music[3] - Tune1;
+		Tunes4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://83.149.126.10/listen/2q2gvgzkb')\">Radio iShine: " + full_Music[3];
+	}
+	if (full_Music[3] == godsdjs) {
+		full_Music[3] = full_Music[3] - Tune1;
+		Tunes4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://godsdjsradio.com:8080/stream')\">God's DJs: " + full_Music[3];
+	}
+	if (full_Music[4] == klove) {
+		full_Music[4] = full_Music[4] - Tune1;
+		Tunes5.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://emf.mp3.miisolutions.net:80/kl/klove_itunes')\">K-Love: " + full_Music[4];
+	}
+	if (full_Music[4] == amusic) {
+		full_Music[4] = full_Music[4] - Tune1;
+		Tunes5.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/inspo.mp3')\">AFR Music: " + full_Music[4];
+	}
+	if (full_Music[4] == rapzilla) {
+		full_Music[4] = full_Music[4] - Tune1;
+		Tunes5.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://listen.radionomy.com/rapzilla')\">Rapzilla: " + full_Music[4];
+	}
+	if (full_Music[4] == air) {
+		full_Music[4] = full_Music[4] - Tune1;
+		Tunes5.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://emf.mp3.miisolutions.net:80/a1/air1_itunes')\">Air1: " + full_Music[4];
+	}
+	if (full_Music[4] == shine) {
+		full_Music[4] = full_Music[4] - Tune1;
+		Tunes5.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://83.149.126.10/listen/2q2gvgzkb')\">Radio iShine: " + full_Music[4];
+	}
+	if (full_Music[4] == godsdjs) {
+		full_Music[4] = full_Music[4] - Tune1;
+		Tunes5.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://godsdjsradio.com:8080/stream')\">God's DJs: " + full_Music[4];
+	}
+	if (full_Music[5] == air) {
+		full_Music[5] = full_Music[5] - Tune1;
+		Tunes6.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://emf.mp3.miisolutions.net:80/a1/air1_itunes')\">Air1: " + full_Music[5];
+	}
+	if (full_Music[5] == klove) {
+		full_Music[5] = full_Music[5] - Tune1;
+		Tunes6.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://emf.mp3.miisolutions.net:80/kl/klove_itunes')\">K-Love: " + full_Music[5];
+	}
+	if (full_Music[5] == amusic) {
+		full_Music[5] = full_Music[5] - Tune1;
+		Tunes6.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/inspo.mp3')\">AFR Music: " + full_Music[5];
+	}
+	if (full_Music[5] == rapzilla) {
+		full_Music[5] = full_Music[5] - Tune1;
+		Tunes6.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://listen.radionomy.com/rapzilla')\">Rapzilla: " + full_Music[5];
+	}
+	if (full_Music[5] == shine) {
+		full_Music[5] = full_Music[5] - Tune1;
+		Tunes6.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://83.149.126.10/listen/2q2gvgzkb')\">Radio iShine: " + full_Music[5];
+	}
+	if (full_Music[5] == godsdjs) {
+		full_Music[5] = full_Music[5] - Tune1;
+		Tunes6.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://godsdjsradio.com:8080/stream')\">God's DJs: " + full_Music[5];
+	}
+	if (full_News[0] == trc) {
+		Talk1 = full_News[0]
+		News1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('scheduler.html')\">Talk Radio Channel: " + full_News[0];
+	}
+	if (full_News[0] == cnn) {
+		Talk1 = full_News[0]
+		News1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://tunein.streamguys1.com/cnn')\">CNN: " + full_News[0];
+	}
+	if (full_News[0] == fnc) {
+		Talk1 = full_News[0]
+		News1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://54.80.189.172/foxnewsradio-foxnewsaac-ibc2')\">Fox News Talk: " + full_News[0];
+	}
+	if (full_News[0] == npr) {
+		Talk1 = full_News[0]
+		News1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://www.npr.org/streams/mp3/nprlive24.m3u')\">NPR: " + full_News[0];
+	}
+	if (full_News[0] == afr) {
+		Talk1 = full_News[0]
+		News1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/talkhigh.mp3')\">AFR Talk: " + full_News[0];
+	}
+	if (full_News[1] == npr) {
+		full_News[1] = full_News[1] - Talk1;
+		News2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://www.npr.org/streams/mp3/nprlive24.m3u')\">NPR: " + full_News[1];
+	}
+	if (full_News[1] == cnn) {
+		full_News[1] = full_News[1] - Talk1;
+		News2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://tunein.streamguys1.com/cnn')\">CNN: " + full_News[1];
+	}
+	if (full_News[1] == fnc) {
+		full_News[1] = full_News[1] - Talk1;
+		News2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://54.80.189.172/foxnewsradio-foxnewsaac-ibc2')\">Fox News Talk: " + full_News[1];
+	}
+	if (full_News[1] == trc) {
+		full_News[1] = full_News[1] - Talk1;
+		News2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('scheduler.html')\">Talk Radio Channel: " + full_News[1];
+	}
+	if (full_News[1] == afr) {
+		full_News[1] = full_News[1] - Talk1;
+		News2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/talkhigh.mp3')\">AFR Talk: " + full_News[1];
+	}
+	if (full_News[2] == afr) {
+		full_News[2] = full_News[2] - Talk1;
+		News3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/talkhigh.mp3')\">AFR Talk: " + full_News[2];
+	}
+	if (full_News[2] == cnn) {
+		full_News[2] = full_News[2] - Talk1;
+		News3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://tunein.streamguys1.com/cnn')\">CNN: " + full_News[2];
+	}
+	if (full_News[2] == fnc) {
+		full_News[2] = full_News[2] - Talk1;
+		News3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://54.80.189.172/foxnewsradio-foxnewsaac-ibc2')\">Fox News Talk: " + full_News[2];
+	}
+	if (full_News[2] == npr) {
+		full_News[2] = full_News[2] - Talk1;
+		News3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://www.npr.org/streams/mp3/nprlive24.m3u')\">NPR: " + full_News[2];
+	}
+	if (full_News[2] == trc) {
+		full_News[2] = full_News[2] - Talk1;
+		News3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('scheduler.html')\">Talk Radio Channel: " + full_News[2];
+	}
+	if (full_News[3] == fnc) {
+		full_News[3] = full_News[3] - Talk1;
+		News4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://54.80.189.172/foxnewsradio-foxnewsaac-ibc2')\">Fox News Talk: " + full_News[3];
+	}
+	if (full_News[3] == afr) {
+		full_News[3] = full_News[3] - Talk1;
+		News4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/talkhigh.mp3')\">AFR Talk: " + full_News[3];
+	}
+	if (full_News[3] == cnn) {
+		full_News[3] = full_News[3] - Talk1;
+		News4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://tunein.streamguys1.com/cnn')\">CNN: " + full_News[3];
+	}
+	if (full_News[3] == npr) {
+		full_News[3] = full_News[3] - Talk1;
+		News4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://www.npr.org/streams/mp3/nprlive24.m3u')\">NPR: " + full_News[3];
+	}
+	if (full_News[3] == trc) {
+		full_News[3] = full_News[3] - Talk1;
+		News4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('scheduler.html')\">Talk Radio Channel: " + full_News[3];
+	}
+	if (full_News[4] == cnn) {
+		full_News[4] = full_News[4] - Talk1;
+		News5.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://tunein.streamguys1.com/cnn')\">CNN: " + full_News[4];
+	}
+	if (full_News[4] == fnc) {
+		full_News[4] = full_News[4] - Talk1;
+		News5.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://54.80.189.172/foxnewsradio-foxnewsaac-ibc2')\">Fox News Talk: " + full_News[4];
+	}
+	if (full_News[4] == afr) {
+		full_News[4] = full_News[4] - Talk1;
+		News5.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/talkhigh.mp3')\">AFR Talk: " + full_News[4];
+	}
+	if (full_News[4] == npr) {
+		full_News[4] = full_News[4] - Talk1;
+		News5.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://www.npr.org/streams/mp3/nprlive24.m3u')\">NPR: " + full_News[4];
+	}
+	if (full_News[4] == trc) {
+		full_News[4] = full_News[4] - Talk1;
+		News5.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('scheduler.html')\">Talk Radio Channel: " + full_News[4];
+	}
+	if (full_Teach[0] == bbn) {
+		Bible1 = full_Teach[0]
+		Teach1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://bbnmedia-lh.akamaihd.net/i/BibleBroadcasting_Englishios@87472/master.m3u8')\">BBN: " + full_Teach[0];
+	}
+	if (full_Teach[0] == moody) {
+		Bible1 = full_Teach[0]
+		Teach1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://primary.moodyradiostream.org/mbn1.mp3')\">Moody Radio: " + full_Teach[0];
+	}
+	if (full_Teach[0] == afr) {
+		Bible1 = full_Teach[0]
+		Teach1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/talkhigh.mp3')\">AFR Talk: " + full_Teach[0];
+	}
+	if (full_Teach[0] == vcy) {
+		Bible1 = full_Teach[0]
+		Teach1.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://72.13.86.203:8000/listen.pls')\">VCY America: " + full_Teach[0];
+	}
+	if (full_Teach[1] == afr) {
+		full_Teach[1] = full_Teach[1] - Bible1;
+		Teach2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/talkhigh.mp3')\">AFR Talk: " + full_Teach[1];
+	}
+	if (full_Teach[1] == moody) {
+		full_Teach[1] = full_Teach[1] - Bible1;
+		Teach2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://primary.moodyradiostream.org/mbn1.mp3')\">Moody Radio: " + full_Teach[1];
+	}
+	if (full_Teach[1] == vcy) {
+		full_Teach[1] = full_Teach[1] - Bible1;
+		Teach2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://72.13.86.203:8000/listen.pls')\">VCY America: " + full_Teach[1];
+	}
+	if (full_Teach[1] == bbn) {
+		full_Teach[1] = full_Teach[1] - Bible1;
+		Teach2.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://bbnmedia-lh.akamaihd.net/i/BibleBroadcasting_Englishios@87472/master.m3u8')\">BBN: " + full_Teach[1];
+	}
+	if (full_Teach[2] == bbn) {
+		full_Teach[2] = full_Teach[2] - Bible1;
+		Teach3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://bbnmedia-lh.akamaihd.net/i/BibleBroadcasting_Englishios@87472/master.m3u8')\">BBN: " + full_Teach[2];
+	}
+	if (full_Teach[2] == afr) {
+		full_Teach[2] = full_Teach[2] - Bible1;
+		Teach3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/talkhigh.mp3')\">AFR Talk: " + full_Teach[2];
+	}
+	if (full_Teach[2] == vcy) {
+		full_Teach[2] = full_Teach[2] - Bible1;
+		Teach3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://72.13.86.203:8000/listen.pls')\">VCY America: " + full_Teach[2];
+	}
+	if (full_Teach[2] == moody) {
+		full_Teach[2] = full_Teach[2] - Bible1;
+		Teach3.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://primary.moodyradiostream.org/mbn1.mp3')\">Moody Radio: " + full_Teach[2];
+	}
+	if (full_Teach[3] == vcy) {
+		full_Teach[3] = full_Teach[3] - Bible1;
+		Teach4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://72.13.86.203:8000/listen.pls')\">VCY America: " + full_Teach[3];
+	}
+	if (full_Teach[3] == moody) {
+		full_Teach[3] = full_Teach[3] - Bible1;
+		Teach4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://primary.moodyradiostream.org/mbn1.mp3')\">Moody Radio: " + full_Teach[3];
+	}
+	if (full_Teach[3] == bbn) {
+		full_Teach[3] = full_Teach[3] - Bible1;
+		Teach4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://bbnmedia-lh.akamaihd.net/i/BibleBroadcasting_Englishios@87472/master.m3u8')\">BBN: " + full_Teach[3];
+	}
+	if (full_Teach[3] == afr) {
+		full_Teach[3] = full_Teach[3] - Bible1;
+		Teach4.innerHTML = "<a href=\"javascript:void(0)\" onClick=\"Talk('http://mediaserver3.afa.net:8000/talkhigh.mp3')\">AFR Talk: " + full_Teach[3];
+	}
+}
+</script>

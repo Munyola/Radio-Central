@@ -1,0 +1,534 @@
+<script type="text/javascript">
+marklevin = "<br /><br /><button onclick='Control()'>Pause</button><br /><div><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' target='http://4293.live.streamtheworld.com/MARK_LEVINAAC?&uuid=15F6FB00-0000-0001-1755-1EBAEDA617CA'></embed></div></p>";
+laura = "<br /><br /><button onclick='Control()'>Pause</button><br /><div><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' target='http://noxsolutions.mp3.miisolutions.net/nox/laura'></embed></div></p>";
+sean = "<br /><br /><button onclick='Control()'>Pause</button><br /><div><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' target='http://prn-hannity-ic-pri.ng.akacast.akamaistream.net/7/811/60538/v1/auth.akacast.akamaistream.net/prn_hannity_ic_pri'></embed></div></p>";
+cbs = "<br /><br /><button onclick='Control()'>Pause</button><br /><div><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' target='http://1451.live.streamtheworld.com:3690/CBSNEWSDIALUP_SC'></embed></div></p>";
+night = "<br /><br /><button onclick='Control()'>Pause</button><br /><div><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' target='http://cfraam-mp3.akacast.akamaistream.net/7/512/102120/v1/astral.akacast.akamaistream.net/cfraam-mp3'></embed></div></p>";
+wbal = "<br /><br /><button onclick='Control()'>Pause</button><br /><div><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' target='http://2773.live.streamtheworld.com:443/WBALAMAAC_SC'></embed></div></p>";
+wrc = "<br /><br /><button onclick='Control()'>Pause</button><br /><div><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' target='http://3473.live.streamtheworld.com:80/WWRCAMAAC_SC'></embed></div></p>";
+sandy = "<br /><br /><button onclick='Control()'>Pause</button><br /><div><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' target='http://mediaserver3.afa.net:8000/talk.mp3'></embed></div></p>";
+glenn = "<br /><br /><button onclick='Control()'>Pause</button><br /><div><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' target='http://1.ice1.firststreaming.com:8000/kzrg_am.aac'></embed></div></p>";
+lauralive = "<br /><br /><button onclick='Control()'>Pause</button><br /><div><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' target='http://96.245.122.139:88/broadwave.mp3?src=1&rate=1&ref=http%3A%2F%2F1180wfyl.com%2F'></embed></div></p>";
+ap = "<br /><br /><button onclick='Control()'>Pause</button><br /><div><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' target='http://apnews.streamguys1.com/apnews'></embed></div></p>";
+steve = "<br /><br /><button onclick='Control()'>Pause</button><br /><div><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' target='http://72.13.107.75:9008'></embed></div></p>";
+wmal = "<br /><br /><button onclick='Control()'>Pause</button><br /><div><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' target='http://provisioning.streamtheworld.com/pls/WMALAMAAC.pls'></embed></div></p>";
+wnew = "<br /><br /><button onclick='Control()'>Pause</button><br /><div><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='10%'  height='4%' id='vlc' loop='yes' autoplay='yes' target='http://8283.live.streamtheworld.com:443/WNEWFMDCDIALUP_SC'></embed></div></p>";
+control = 0
+set2 = "none";
+divs = document.getElementsByTagName("div");
+ps = document.getElementsByTagName("p");
+var currentdate = new Date();
+hours = currentdate.getHours();
+minutes = currentdate.getMinutes();
+seconds = currentdate.getSeconds();
+day = currentdate.getDay();
+if (day == 0 || day == 6) {
+	weekend = "true";
+	}
+if (day > 0 && day < 6) {
+	weekend = "false";
+	}
+if (hours == 0 && weekend == "false") {
+	document.write("<p>Late Night Counsell<br />Midnight");
+	document.write(night);
+	set2 = "night";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 2 && weekend == "false") {
+	document.write("<p>Liberty Nation<br />2 AM");
+	document.write(wrc);
+	set2 = "wrc";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 3 && weekend == "false") {
+	document.write("<p>Overnight America<br />3 AM");
+	document.write(wbal);
+	set2 = "wbal";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 6 && weekend == "false") {
+	document.write("<p>Bill Bennet's Morning In America<br />6 AM");
+	document.write(wrc);
+	set2 = "wrc";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 7 && weekend == "false") {
+	document.write("<p>Sandy Rios In The Morning<br />7 AM");
+	document.write(sandy);
+	set2 = "sandy";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 9 && weekend == "false") {
+	document.write("<p>Glenn Beck Program<br />9 AM");
+	document.write(glenn);
+	set2 = "glenn";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 10 && weekend == "false") {
+	document.write("<p>Chris Plante Show<br />10 AM");
+	document.write(wmal);
+	set2 = "wmal";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 12 && weekend == "false") {
+	document.write("<p>Rush Limbaugh Show<br />NOON");
+	document.write(wmal);
+	set2 = "wmal";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 13 && weekend == "false") {
+	document.write("<p>CBS Radio News<br />1 PM");
+	document.write(cbs);
+	set2 = "cbs";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 14 && weekend == "false") {
+	document.write("<p>Dennis Prager Show<br />2 PM");
+	document.write(wrc);
+	set2 = "wrc";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 15 && weekend == "false") {
+	document.write("<p>Savage Nation<br />3 PM");
+	document.write(wmal);
+	set2 = "wmal";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 16 && weekend == "false") {
+	document.write("<p>AP Radio News<br />4 PM");
+	document.write(ap);
+	set2 = "ap";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 19 && minutes < 30 && weekend == "false") {
+	document.write("<p>CBS Evening News<br />7 PM");
+	document.write(wnew);
+	set2 = "wnew";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 19 && minutes > 30 && weekend == "false") {
+	document.write("<p>AP Radio News<br />7:30 PM");
+	document.write(ap);
+	set2 = "ap";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 20 && weekend == "false") {
+	document.write("<p>Mark Levin Show<br />8 PM");
+	document.write(ap);
+	set2 = "marklevin";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 21 && weekend == "false") {
+	document.write("<p>Steve Deace Show<br />9 PM");
+	document.write(steve);
+	set2 = "steve";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 23 && weekend == "false") {
+	document.write("<p>Steve Deace Show<br />11 PM");
+	document.write(steve);
+	set2 = "steve";
+	div_content = divs[0].innerHTML;
+	}
+if (hours > 0 && hours < 4 && weekend == "true") {
+	document.write("<p>Laura Ingraham Show<br />Midnight to 4");
+	document.write(laura);
+	set2 = "laura";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 4) {
+	document.write("<p>Mark Levin Show<br />4 AM");
+	document.write(marklevin);
+	set2 = "marklevin";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 5) {
+	document.write("<p>CBS Radio News<br />5 AM");
+	document.write(cbs);
+	set2 = "cbs";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 6 && weekend == "true") {
+	document.write("<p>Sean Hannity show<br />6 AM");
+	document.write(sean);
+	set2 = "sean";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 7 && weekend == "true") {
+	document.write("<p>Laura Ingraham Show<br />7 AM");
+	document.write(laura);
+	set2 = "laura";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 8) {
+	document.write("<p>CBS Radio News<br />8 AM");
+	document.write(cbs);
+	set2 = "cbs";
+	div_content = divs[0].innerHTML;
+	}
+if (hours > 8 && hours < 11 && weekend == "true") {
+	document.write("<p>Sean Hannity Show<br />9 AM to 11 AM");
+	document.write(sean);
+	set2 = "sean";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 11) {
+	document.write("<p>Laura Ingraham Show<br />11 AM");
+	document.write(laura);
+	set2 = "laura";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 12 && weekend == "true") {
+	document.write("<p>Mark Levin Show<br />NOON");
+	document.write(marklevin);
+	set2 = "marklevin";
+	div_content = divs[0].innerHTML;
+	}
+if (hours > 12 && hours < 15 && weekend == "true") {
+	document.write("<p>CBS Radio News<br />1 PM to 3 PM");
+	document.write(cbs);
+	set2 = "cbs";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 15 && weekend == "true") {
+	document.write("<p>Mark Levin Show<br />3 PM");
+	document.write(marklevin);
+	set2 = "marklevin";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 16 && weekend == "true") {
+	document.write("<p>Laura Ingraham Show<br />4 PM");
+	document.write(laura);
+	set2 = "laura";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 17) {
+	document.write("<p>Sean Hannity Show<br />5 PM");
+	document.write(sean);
+	set2 = "sean";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 18) {
+	document.write("<p>Laura Ingraham Show<br />6 PM");
+	document.write(laura);
+	set2 = "laura";
+	div_content = divs[0].innerHTML;
+	}
+if (hours > 18 && hours < 21 && weekend == "true") {
+	document.write("<p>Mark Levin Show<br />7 PM to 9 PM");
+	document.write(marklevin);
+	set2 = "marklevin";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 21 && weekend == "true") {
+	document.write("<p>Laura Ingraham<br />9 PM");
+	document.write(laura);
+	set2 = "laura";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 22) {
+	document.write("<p>Sean Hannity Show<br />10 PM");
+	document.write(sean);
+	set2 = "sean";
+	div_content = divs[0].innerHTML;
+	}
+if (hours == 23 && weekend == "true") {
+	document.write("<p>Mark Levin Show<br />11 PM");
+	document.write(marklevin);
+	set2 = "marklevin";
+	div_content = divs[0].innerHTML;
+	}
+function Check() {
+	currentdate = new Date();
+	hours = currentdate.getHours();
+	minutes = currentdate.getMinutes();
+	seconds = currentdate.getSeconds();
+	day = currentdate.getDay();
+	if (day == 0 || day == 6) {
+		weekend = "true";
+		}
+	if (day > 0 && day < 6) {
+		weekend = "false";
+		}
+	if (hours == 0 && set2 != "night" && control == 0 && weekend == "false") {
+		document.write("<p>Late Night Counsell<br />Midnight");
+		document.write(night);
+		set2 = "night";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 2 && set2 != "wrc" && control == 0 && weekend == "false") {
+		document.write("<p>Liberty Nation<br />2 AM");
+		document.write(wrc);
+		set2 = "wrc";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 3 && set2 != "wbal" && control == 0 && weekend == "false") {
+		document.write("<p>Overnight America<br />3 AM");
+		document.write(wbal);
+		set2 = "wbal";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 6 && set2 != "wrc" && control == 0 && weekend == "false") {
+		document.write("<p>Bill Bennet's Morning In America<br />6 AM");
+		document.write(wrc);
+		set2 = "wrc";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 7 && set2 != "sandy" && control == 0 && weekend == "false") {
+		document.write("<p>Sandy Rios In The Morning<br />7 AM");
+		document.write(sandy);
+		set2 = "sandy";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 9 && set2 != "glenn" && control == 0 && weekend == "false") {
+		document.write("<p>Glenn Beck Program<br />9 AM");
+		document.write(glenn);
+		set2 = "glenn";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 10 && set2 != "wmal" && control == 0 && weekend == "false") {
+		document.write("<p>Chris Plante Show<br />10 AM");
+		document.write(wmal);
+		set2 = "wmal";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 12 && set2 != "wmal" && control == 0 && weekend == "false") {
+		document.write("<p>Rush Limbaugh Show<br />NOON");
+		document.write(wmal);
+		set2 = "wmal";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 13 && set2 != "cbs" && control == 0 && weekend == "false") {
+		document.write("<p>CBS Radio News<br />1 PM");
+		document.write(cbs);
+		set2 = "cbs";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 14 && set2 != "wrc" && control == 0 && weekend == "false") {
+		document.write("<p>Dennis Prager Show<br />2 PM");
+		document.write(wrc);
+		set2 = "wrc";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 15 && set2 != "wmal" && control == 0 && weekend == "false") {
+		document.write("<p>Savage Nation<br />3 PM");
+		document.write(wmal);
+		set2 = "wmal";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 16 && set2 != "ap" && control == 0 && weekend == "false") {
+		document.write("<p>AP Radio News<br />4 PM");
+		document.write(ap);
+		set2 = "ap";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 19 && minutes < 30 && set2 != "wnew" && control == 0 && weekend == "false") {
+		document.write("<p>CBS Evening News<br />7 PM");
+		document.write(cbs);
+		set2 = "cbs";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 19 && minutes > 30 && set2 != "ap" && control == 0 && weekend == "false") {
+		document.write("<p>AP Radio News<br />7:30 PM");
+		document.write(ap);
+		set2 = "marklevin";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 20 && set2 != "marklevin" && control == 0 && weekend == "false") {
+		document.write("<p>Mark Levin Show<br />8 PM");
+		document.write(marklevin);
+		set2 = "marklevin";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 21 && set2 != "steve" && control == 0 && weekend == "false") {
+		document.write("<p>Steve Deace Show<br />9 PM");
+		document.write(steve);
+		set2 = "steve";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 23 && set2 != "steve" && control == 0 && weekend == "false") {
+		document.write("<p>Steve Deace Show<br />11 PM");
+		document.write(steve);
+		set2 = "steve";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours > 0 && hours < 4 && set2 != "laura" && control == 0 && weekend == "true") {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>Laura Ingraham Show<br />Midnight to 4<br />" + laura
+		set2 = "laura";
+		divs[0].innerHTML="";
+		}
+	if (hours == 4 && set2 != "marklevin" && control == 0) {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>Mark Levin Show<br />4 AM<br />" + marklevin
+		set2 = "marklevin";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 5 && set2 != "cbs" && control == 0) {
+		divs[0].innerHTML="";
+		document.write("<p>CBS Radio News<br />5 AM");
+		document.write(cbs);
+		set2 = "cbs";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 6 && set2 != "sean" && control == 0 && weekend == "true") {
+		divs[0].innerHTML="";
+		document.write("<p>Sean Hannity show<br />6 AM");
+		document.write(sean);
+		set2 = "sean";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 7 && set2 != "laura" && control == 0 && weekend == "true") {
+		divs[0].innerHTML="";
+		document.write("<p>Laura Ingraham Show<br />7 AM");
+		document.write(laura);
+		set2 = "laura";
+		div_content = divs[0].innerHTML;
+		}
+	// Copy this code throughout the entire page. It's more stable than before.
+	// ps[0].innerHTML = 
+	// Instead of
+	// document.write(
+	if (hours == 8 && set2 != "cbs" && control == 0) {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>CBS Radio News<br />8 AM<br />" + cbs;
+		set2 = "cbs";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours > 8 && hours < 11 && set2 != "sean" && control == 0 && weekend == "true") {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>Sean Hannity Show<br />9 AM to 11 AM<br />" + sean;
+		set2 = "sean";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 11 && set2 != "laura" && control == 0) {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>Laura Ingraham Show<br />11 AM<br />" + laura;
+		set2 = "laura";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 12 && set2 != "marklevin" && control == 0 && weekend == "true") {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>Mark Levin Show<br />NOON<br />" + marklevin;
+		set2 = "marklevin";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours > 12 && hours < 15 && set2 != "cbs" && control == 0 && weekend == "true") {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>CBS Radio News<br />1 PM to 3 PM" + cbs;
+		set2 = "cbs";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 15 && set2 != "marklevin" && control == 0 && weekend == "true") {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>Mark Levin Show<br />3 PM" + marklevin;
+		set2 = "marklevin";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 16 && set2 != "laura" && control == 0 && weekend == "true") {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>Laura Ingraham Show<br />4 PM" + laura;
+		set2 = "laura";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 17 && set2 != "sean" && control == 0) {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>Sean Hannity Show<br />5 PM" + sean;
+		set2 = "sean";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 18 && set2 != "laura" && control == 0) {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>Laura Ingraham Show<br />6 PM" + laura;
+		set2 = "laura";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours > 18 && hours < 21 && set2 != "marklevin" && control == 0 && weekend == "true") {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>Mark Levin Show<br />7 PM to 9 PM" + marklevin;
+		set2 = "marklevin";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 21 && set2 != "laura" && control == 0 && weekend == "true") {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>Laura Ingraham<br />9 PM" + laura;
+		set2 = "laura";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 22 && set2 != "sean" && control == 0) {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>Sean Hannity Show<br />10 PM" + sean;
+		set2 = "sean";
+		div_content = divs[0].innerHTML;
+		}
+	if (hours == 23 && set2 != "marklevin" && control == 0 && weekend == "true") {
+		divs[0].innerHTML="";
+		ps[0].innerHTML = "<p>Mark Levin Show<br />11 PM" + marklevin;
+		set2 = "marklevin";
+		div_content = divs[0].innerHTML;
+		}
+	document.title = "Talk Radio Channel - 24/7 Radio News";
+}
+function Control() {
+	just_set = 0
+	if (control == 0 && just_set != 1) {
+		divs[0].innerHTML="<p>Paused</p>";
+		control = 1;
+		just_set = 1
+	}
+	if (control == 1 && just_set != 1) {
+		divs[0].innerHTML=div_content;
+		just_set = 1;
+		control = 0;
+		Check()
+	}
+}
+myVar = setInterval(Check, 1000);
+window.i = 0
+//alert(window.i)
+function buttonFunction() {
+	//alert(window.i);
+	//alert(window.i);
+	if (window.i > 1) {
+		//alert(window.i)
+		window.i = 0;
+	}
+	if (window.i == 0) {
+		var currentdate = new Date();
+		hours = currentdate.getHours();
+		minutes = currentdate.getMinutes();
+		seconds = currentdate.getSeconds();
+		days = currentdate.getDay();
+		months = currentdate.getMonth();
+		years = currentdate.getFullYear();
+		years_to_seconds = years * 11404800;
+		months_to_seconds = months * 950400;
+		days_to_seconds = days * 86400;
+		hours_to_seconds = hours * 3600;
+		minutes_to_seconds = minutes * 60;
+		window.start_time = years_to_seconds + months_to_seconds + days_to_seconds + hours_to_seconds + minutes_to_seconds + seconds;
+	}
+	if (window.i == 1) {
+		var currentdate = new Date();
+		hours2 = currentdate.getHours();
+		minutes2 = currentdate.getMinutes();
+		seconds2 = currentdate.getSeconds();
+		days2 = currentdate.getDay();
+		months2 = currentdate.getMonth();
+		years2 = currentdate.getFullYear();
+		years_to_seconds2 = years2 * 11404800;
+		months_to_seconds2 = months2 * 950400;
+		days_to_seconds2 = days2 * 86400;
+		hours_to_seconds2 = hours2 * 3600;
+		minutes_to_seconds2 = minutes2 * 60;
+		end_time = years_to_seconds2 + months_to_seconds + days_to_seconds2 + hours_to_seconds2 + minutes_to_seconds2 + seconds2;
+		total_tim = end_time - window.start_time;
+		total_time = total_tim.toString();
+		alert("It's been " + total_time + " seconds since you hit the button.");
+		document.cookie="timeittook=" + total_time;
+	}
+	window.i = window.i + 1;
+	document.title = "Talk Radio Channel - 24/7 Radio News";
+}
+document.title = "Talk Radio Channel - 24/7 Radio News";
+</script>

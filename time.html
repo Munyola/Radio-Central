@@ -1,0 +1,263 @@
+<button type="button" onClick="buttonFunction()">Start Time!</button>
+<script src="core.js">
+</script>
+<script type="text/javascript">
+marklevin = "<a href='Control()'>Pause</a><br /><embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='100%'  height='100%' id='vlc' loop='yes' autoplay='yes' target='http://4293.live.streamtheworld.com/MARK_LEVINAAC?&uuid=15F6FB00-0000-0001-1755-1EBAEDA617CA'></embed>";
+laura = "<embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='100%'  height='100%' id='vlc' loop='yes' autoplay='yes' target='http://noxsolutions.mp3.miisolutions.net/nox/laura'></embed>";
+sean = "<embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='100%'  height='100%' id='vlc' loop='yes' autoplay='yes' target='http://prn-hannity-ic-pri.ng.akacast.akamaistream.net/7/811/60538/v1/auth.akacast.akamaistream.net/prn_hannity_ic_pri'></embed>";
+cbs = "<embed type='application/x-vlc-plugin' pluginspage='http://www.videolan.org'  width='100%'  height='100%' id='vlc' loop='yes' autoplay='yes' target='http://1451.live.streamtheworld.com:3690/CBSNEWSDIALUP_SC'></embed>";
+document.write("It works.");
+document.write("<a href='Control()'>Pause</a>");
+control = 0
+function Control() {
+	if (control == 1) {
+		getElementById("vlc").play();
+		control = 0;
+	else {
+		getElementById("vlc").pause();
+		control = 1;
+var currentdate = new Date();
+hours = currentdate.getHours();
+minutes = currentdate.getMinutes();
+seconds = currentdate.getSeconds();
+if (hours > 0 && hours < 4) {
+	document.write("Laura Ingraham Show<br />Midnight to 4");
+	document.write(laura);
+	set2 = "laura";
+	}
+if (hours == 4) {
+	document.write("Mark Levin Show<br />4 AM");
+	document.write(marklevin);
+	set2 = "marklevin";
+	}
+if (hours == 5) {
+	document.write("CBS Radio News<br />5 AM");
+	document.write(cbs);
+	set2 = "cbs";
+	}
+if (hours == 6) {
+	document.write("Sean Hannity show<br />6 AM");
+	document.write(sean);
+	set2 = "sean";
+	}
+if (hours == 7) {
+	document.write("Laura Ingraham Show<br />7 AM");
+	document.write(laura);
+	set2 = "laura";
+	}
+if (hours == 8) {
+	document.write("CBS Radio News<br />8 AM");
+	document.write(cbs);
+	set2 = "cbs";
+	}
+if (hours > 8 && hours < 11) {
+	document.write("Sean Hannity Show<br />9 AM to 11 AM");
+	document.write(sean);
+	set2 = "sean";
+	}
+if (hours == 11) {
+	document.write("Laura Ingraham Show<br />11 AM");
+	document.write(laura);
+	set2 = "laura";
+	}
+if (hours == 12) {
+	document.write("Mark Levin Show<br />NOON");
+	document.write(marklevin);
+	set2 = "marklevin";
+	}
+if (hours > 12 && hours < 15) {
+	document.write("CBS Radio News<br />1 PM to 3 PM");
+	document.write(cbs);
+	set2 = "cbs";
+	}
+if (hours == 15) {
+	document.write("Mark Levin Show<br />3 PM");
+	document.write(marklevin);
+	set2 = "marklevin";
+	}
+if (hours == 16) {
+	document.write("Laura Ingraham Show<br />4 PM");
+	document.write(laura);
+	set2 = "laura";
+	}
+if (hours == 17) {
+	document.write("Sean Hannity Show<br />5 PM");
+	document.write(sean);
+	set2 = "sean";
+	}
+if (hours == 18) {
+	document.write("Laura Ingraham Show<br />6 PM");
+	document.write(laura);
+	set2 = "laura";
+	}
+if (hours > 18 && hours < 21) {
+	document.write("Mark Levin Show<br />7 PM to 9 PM");
+	document.write(marklevin);
+	set2 = "marklevin";
+	}
+if (hours == 21) {
+	document.write("Laura Ingraham<br />9 PM");
+	document.write(laura);
+	set2 = "laura";
+	}
+if (hours == 22) {
+	document.write("Sean Hannity Show<br />10 PM");
+	document.write(sean);
+	set2 = "sean";
+	}
+if (hours == 22) {
+	document.write("Mark Levin Show<br />11 PM");
+	document.write(marklevin);
+	set2 = "marklevin";
+	}
+function check() {
+	if (hours > 0 && hours < 4 && set2 != "laura") {
+		document.write("Laura Ingraham Show<br />Midnight to 4");
+		set2 = "laura";
+		document.write(laura);
+		}
+	if (hours == 4 && set2 != "marklevin") {
+		document.write("Mark Levin Show<br />4 AM");
+		document.write(marklevin);
+		set2 = "marklevin";
+		}
+	if (hours == 5 && set2 != "cbs") {
+		document.write("CBS Radio News<br />5 AM");
+		document.write(cbs);
+		set2 = "cbs";
+		}
+	if (hours == 6 && set2 != "sean") {
+		document.write("Sean Hannity show<br />6 AM");
+		document.write(sean);
+		set2 = "sean";
+		}
+	if (hours == 7 && set2 != "laura") {
+		document.write("Laura Ingraham Show<br />7 AM");
+		document.write(laura);
+		set2 = "laura";
+		}
+	if (hours == 8 && set2 != "cbs") {
+		document.write("CBS Radio News<br />8 AM");
+		document.write(cbs);
+		set2 = "cbs";
+		}
+	if (hours > 8 && hours < 11 && set2 != "sean") {
+		document.write("Sean Hannity Show<br />9 AM to 11 AM");
+		document.write(sean);
+		set2 = "sean";
+		}
+	if (hours == 11 && set2 != "laura") {
+		document.write("Laura Ingraham Show<br />11 AM");
+		document.write(laura);
+		set2 = "laura";
+		}
+	if (hours == 12 && set2 != "marklevin") {
+		document.write("Mark Levin Show<br />NOON");
+		document.write(marklevin);
+		set2 = "marklevin";
+		}
+	if (hours > 12 && hours < 15 && set2 != "cbs") {
+		document.write("CBS Radio News<br />1 PM to 3 PM");
+		document.write(cbs);
+		set2 = "cbs";
+		}
+	if (hours == 15 && set2 != "marklevin") {
+		document.write("Mark Levin Show<br />3 PM");
+		document.write(marklevin);
+		set2 = "marklevin";
+		}
+	if (hours == 16 && set2 != "laura") {
+		document.write("Laura Ingraham Show<br />4 PM");
+		document.write(laura);
+		set2 = "laura";
+		}
+	if (hours == 17 && set2 != "sean") {
+		document.write("Sean Hannity Show<br />5 PM");
+		document.write(sean);
+		set2 = "sean";
+		}
+	if (hours == 18 && set2 != "laura") {
+		document.write("Laura Ingraham Show<br />6 PM");
+		document.write(laura);
+		set2 = "laura";
+		}
+	if (hours > 18 && hours < 21 && set2 != "marklevin") {
+		document.write("Mark Levin Show<br />7 PM to 9 PM");
+		document.write(marklevin);
+		set2 = "marklevin";
+		}
+	if (hours == 21 && set2 != "laura") {
+		document.write("Laura Ingraham<br />9 PM");
+		document.write(laura);
+		set2 = "laura";
+		}
+	if (hours == 22 && set2 != "sean") {
+		document.write("Sean Hannity Show<br />10 PM");
+		document.write(sean);
+		set2 = "sean";
+		}
+	if (hours == 22 && set2 != "marklevin") {
+		document.write("Mark Levin Show<br />11 PM");
+		document.write(marklevin);
+		set2 = "marklevin";
+		}
+}
+myVar = setInterval(check, 1000);
+</script>
+<script type="text/javascript">
+document.write("It works.");
+document.write("<a href='Control()'>Pause</a>");
+control = 0
+function Control() {
+	if (control == 1) {
+		getElementById("vlc").play();
+		control = 0;
+	else {
+		getElementById("vlc").pause();
+		control = 1;
+window.i = 0
+//alert(window.i)
+function buttonFunction() {
+	//alert(window.i);
+	//alert(window.i);
+	if (window.i > 1) {
+		//alert(window.i)
+		window.i = 0;
+	}
+	if (window.i == 0) {
+		var currentdate = new Date();
+		hours = currentdate.getHours();
+		minutes = currentdate.getMinutes();
+		seconds = currentdate.getSeconds();
+		days = currentdate.getDay();
+		months = currentdate.getMonth();
+		years = currentdate.getFullYear();
+		years_to_seconds = years * 11404800;
+		months_to_seconds = months * 950400;
+		days_to_seconds = days * 86400;
+		hours_to_seconds = hours * 3600;
+		minutes_to_seconds = minutes * 60;
+		window.start_time = years_to_seconds + months_to_seconds + days_to_seconds + hours_to_seconds + minutes_to_seconds + seconds;
+	}
+	if (window.i == 1) {
+		var currentdate = new Date();
+		hours2 = currentdate.getHours();
+		minutes2 = currentdate.getMinutes();
+		seconds2 = currentdate.getSeconds();
+		days2 = currentdate.getDay();
+		months2 = currentdate.getMonth();
+		years2 = currentdate.getFullYear();
+		years_to_seconds2 = years2 * 11404800;
+		months_to_seconds2 = months2 * 950400;
+		days_to_seconds2 = days2 * 86400;
+		hours_to_seconds2 = hours2 * 3600;
+		minutes_to_seconds2 = minutes2 * 60;
+		end_time = years_to_seconds2 + months_to_seconds + days_to_seconds2 + hours_to_seconds2 + minutes_to_seconds2 + seconds2;
+		total_tim = end_time - window.start_time;
+		total_time = total_tim.toString();
+		alert("It's been " + total_time + " seconds since you hit the button.");
+		document.cookie="timeittook=" + total_time;
+	}
+	window.i = window.i + 1;
+}
+</script>
